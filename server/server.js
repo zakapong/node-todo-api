@@ -11,7 +11,7 @@ var app= express();
 
 app.use(bodyParser.json());
 
-app.post('/todo', (req, res)=>{
+app.post('/todos', (req, res)=>{
   var todo= new Todo({
   text: req.body.text
   });
@@ -26,6 +26,8 @@ res.send(doc);
 app.listen(3000,()=>{
   console.log('Start on port 3000');
 });
+
+module.exports={app};
 // var Todo=mongoose.model('Todo',{
 //   text:{
 //     type: String,
